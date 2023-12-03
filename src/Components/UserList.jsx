@@ -56,9 +56,9 @@ export default function UserList() {
   const handleSearch = () => {
     setusers(filteredData);
   };
-  const deleteEntry = (id) => {
-    users.splice(id - 1, 1);
-    setusers([...users]);
+  const deleteEntry = (ids) => {
+    let newarray = users.filter((obj) => !ids.includes(obj.id));
+    setusers([...newarray]);
   };
 
   const removeEntry = (ids) => {
