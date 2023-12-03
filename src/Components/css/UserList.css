@@ -1,0 +1,23 @@
+.searchbar {
+  /* margin: auto; */
+  /* width: 90%; */
+  display: flex;
+  margin-bottom: 1rem;
+}
+.searchbar input {
+  padding: 0.5rem 1rem;
+  border-radius: 5px 0px 0px 5px;
+  border: 1px solid rgb(52, 52, 82);
+  outline: none;
+  font-family: "Nunito", sans-serif;
+}
+.searchbar button {
+  padding: 0.5rem 1rem;
+  border-radius: 0px 5px 5px 0px;
+  border: 1px solid rgb(52, 52, 82);
+  outline: none;
+  font-family: "Nunito", sans-serif;
+  background-color: rgb(52, 52, 82);
+  color: white;
+  cursor: pointer;
+}

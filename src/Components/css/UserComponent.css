@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap");
+
+.titlebar {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  background-color: rgb(52, 52, 82);
+  color: white;
+  align-items: center;
+  padding: 0.5rem 0rem;
+  font-family: "Nunito", sans-serif;
+  border-radius: 5px 5px 0px 0px;
+}
+.col {
+  border-right: 1px solid white;
+}
+.col:last-child {
+  border-right: none;
+}
+.w-25 {
+  width: 25%;
+}
+.w-15 {
+  width: 15%;
+}
+.checkbox {
+  width: 10%;
+  height: 100%;
+  padding-left: 1rem;
+  align-content: center;
+  display: flex;
+  align-items: center;
+}
+.checkbox input {
+  height: 100%;
+  cursor: pointer;
+}
+
+.UserTable {
+  margin: auto;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px 5px 5px 5px;
+  box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.2);
+}
+.UserListItems {
+  width: 100%;
+}
+.UserBox {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0rem;
+  font-family: "Nunito", sans-serif;
+  border-bottom: 1px solid rgb(52, 52, 82);
+}
+.Edit {
+  height: inherit;
+  display: flex;
+  align-items: center;
+}
+.editbtn {
+  background: none;
+  height: 100%;
+  outline: none;
+  border: 1px solid rgb(52, 52, 82);
+  border-radius: 3px;
+}
+.Actions {
+  display: flex;
+  flex-direction: row;
+}
+.Actions div {
+  margin-right: 1rem;
+}
+.Delete {
+  padding: 0.2rem;
+  width: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.col input {
+  padding: 0.25rem;
+  font-family: "Nunito", sans-serif;
+}
+.savebtn {
+  background: none;
+  height: 100%;
+  outline: none;
+  border: 1px solid rgb(52, 52, 82);
+  border-radius: 3px;
+  padding: 0.3rem;
+}
+.header {
+  display: flex;
+  margin: auto;
+  flex-direction: row;
+  align-items: center;
+  width: 90%;
+  justify-content: space-between;
+  font-family: "Nunito", sans-serif;
+}
+.deleteallbtn {
+  margin-right: 3rem;
+}
+.deleteallbtn button {
+  padding: 0.5rem 1rem;
+  width: 1.2rem;
+  display: flex;
+  background: none;
+  border: 1px solid red;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+}
+
+@media only screen and (max-width: 800px) {
+  body {
+    font-size: x-small;
+  }
+}
