@@ -3,9 +3,9 @@ import { useState, useEffect } from "react";
 import "./css/UserComponent.css";
 import UserBox from "./UserBox";
 import PaginationBar from "./PaginationBar";
-import { user } from "fontawesome";
 
 export default function UserComponent(users) {
+  console.log("users", users);
   const [pagerange, setPagerange] = useState([0, 9]);
   const [listofpages, setListofpages] = useState([]);
   const [userlist, setUserlist] = useState(
@@ -110,7 +110,9 @@ export default function UserComponent(users) {
         })}
       </div>
       <div className="bottombar">
-        <div className="selectednum">0 of 46 rows selected</div>
+        <div className="selectednum">
+          {users.selectednum ? users.selectednum : 0} of 46 rows selected
+        </div>
         <div className="paginationbar">
           <button className="PageItem first-page" onClick={gotoStart}>
             {"<<"}

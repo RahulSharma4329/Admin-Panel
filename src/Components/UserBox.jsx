@@ -44,7 +44,7 @@ function UserBox(user) {
           type="checkbox"
           name="select"
           id={"check" + id}
-          className="checki"
+          className="checki selcheck"
           onClick={() => {
             setselected(!selected);
           }}

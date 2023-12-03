@@ -10,6 +10,7 @@ export default function UserList() {
   const [users, setusers] = useState([]);
   const [searchKey, setSearchKey] = useState("");
   const [filteredData, setFilteredData] = useState([]);
+  const [selectednum, setselectednum] = useState(0);
 
   const baseURL =
     "https://geektrust.s3-ap-southeast-1.amazonaws.com/adminui-problem/members.json";
@@ -36,6 +37,22 @@ export default function UserList() {
     setFilteredData(filteredJson);
   }, [searchKey]);
 
+  useEffect(() => {
+    const checkboxes = document.querySelectorAll(".selcheck ");
+    const updateCount = () => {
+      let count = 0;
+      checkboxes.forEach((checkbox) => {
+        if (checkbox.checked) {
+          count += 1;
+        }
+      });
+      setselectednum(count);
+    };
+    checkboxes.forEach((checkbox) => {
+      checkbox.addEventListener("change", updateCount);
+    });
+  });
+
   const handleSearch = () => {
     setusers(filteredData);
   };
@@ -59,7 +76,10 @@ export default function UserList() {
     removeEntry(idstoremove);
     let ele = document.getElementById("a=selectall");
     ele.checked = false;
+    setselectednum(0);
   };
+
+  console.log(selectednum);
 
   return (
     <div>
@@ -88,6 +108,7 @@ export default function UserList() {
           className="userlistcomponent"
           users={users}
           deleteEntry={deleteEntry}
+          selectednum={selectednum}
         />
       ) : (
         "Loading"
