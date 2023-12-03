@@ -29,7 +29,7 @@ export default function UserList() {
       setusers(usersbackup);
       return;
     }
-    const filteredJson = users.filter((item) =>
+    const filteredJson = usersbackup.filter((item) =>
       Object.keys(item).some((key) =>
         item[key].toString().toLowerCase().includes(searchKey.toLowerCase())
       )
