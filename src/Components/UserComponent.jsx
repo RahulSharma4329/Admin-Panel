@@ -5,14 +5,19 @@ import UserBox from "./UserBox";
 import PaginationBar from "./PaginationBar";
 
 export default function UserComponent(users) {
-  console.log("users", users);
   const [pagerange, setPagerange] = useState([0, 9]);
   const [listofpages, setListofpages] = useState([]);
+  const [selectednum, setselectednum] = useState(users.selectednum);
+  const [totalnum, settotalnum] = useState(users.totalnum);
   const [userlist, setUserlist] = useState(
     users.users.slice(pagerange[0], pagerange[1])
   );
+  const [selectedStatus, setSelectedStatus] = useState(false);
 
-  useEffect(() => {}, [users]);
+  useEffect(() => {
+    setselectednum(users.selectednum);
+    settotalnum(users.totalnum);
+  }, [users]);
 
   useEffect(() => {
     const numberofpages = Math.ceil(users.users.length / 10);
@@ -69,15 +74,20 @@ export default function UserComponent(users) {
   };
 
   const handledeleteall = () => {
+    let count = 0;
     if (document.querySelector(".checki").checked) {
       document.querySelectorAll(".checkbox input").forEach((item) => {
         item.checked = true;
+        count += 1;
       });
     } else {
       document.querySelectorAll(".checkbox input").forEach((item) => {
         item.checked = false;
+        count = 0;
       });
     }
+    setselectednum(count != 0 ? count - 1 : count);
+    setSelectedStatus(!selectedStatus);
   };
 
   return (
@@ -105,14 +115,14 @@ export default function UserComponent(users) {
               key={user.name}
               deleteentry={deleteentry}
               editentry={editentry}
+              selectedstatus={selectedStatus}
             />
           );
         })}
       </div>
       <div className="bottombar">
         <div className="selectednum">
-          {users.selectednum ? users.selectednum : 0} of {users.totalnum} rows
-          selected
+          {selectednum ? selectednum : 0} of {totalnum} rows selected
         </div>
         <div className="paginationbar">
           <button className="PageItem first-page" onClick={gotoStart}>

@@ -46,7 +46,6 @@ export default function UserList() {
           count += 1;
         }
       });
-      console.log(count);
       setselectednum(count);
     };
     checkboxes.forEach((checkbox) => {
@@ -79,8 +78,6 @@ export default function UserList() {
     ele.checked = false;
     setselectednum(0);
   };
-
-  console.log(selectednum);
 
   return (
     <div>

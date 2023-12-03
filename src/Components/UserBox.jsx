@@ -3,12 +3,18 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenToSquare, faTrash } from "@fortawesome/free-solid-svg-icons";
 
 function UserBox(user) {
+  console.log(user);
   const [status, setStatus] = useState("show");
   const [data, setdata] = useState([]);
   const [selected, setselected] = useState(false);
+
   useEffect(() => {
     setdata(user.user);
   }, [user]);
+
+  useEffect(() => {
+    setselected(user.selectedstatus);
+  }, [user.selectedstatus]);
 
   const handleEdit = () => {
     setStatus("edit");
