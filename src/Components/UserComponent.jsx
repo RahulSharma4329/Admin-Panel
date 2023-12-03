@@ -88,7 +88,7 @@ export default function UserComponent(users) {
             type="checkbox"
             name="selectall"
             id="a=selectall"
-            className="checki"
+            className="checki "
             onClick={handledeleteall}
           />
         </div>
@@ -111,7 +111,8 @@ export default function UserComponent(users) {
       </div>
       <div className="bottombar">
         <div className="selectednum">
-          {users.selectednum ? users.selectednum : 0} of 46 rows selected
+          {users.selectednum ? users.selectednum : 0} of {users.totalnum} rows
+          selected
         </div>
         <div className="paginationbar">
           <button className="PageItem first-page" onClick={gotoStart}>

@@ -46,12 +46,13 @@ export default function UserList() {
           count += 1;
         }
       });
+      console.log(count);
       setselectednum(count);
     };
     checkboxes.forEach((checkbox) => {
       checkbox.addEventListener("change", updateCount);
     });
-  });
+  }, [users]);
 
   const handleSearch = () => {
     setusers(filteredData);
@@ -109,6 +110,7 @@ export default function UserList() {
           users={users}
           deleteEntry={deleteEntry}
           selectednum={selectednum}
+          totalnum={users.length}
         />
       ) : (
         "Loading"
